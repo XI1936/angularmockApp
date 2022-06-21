@@ -1,5 +1,4 @@
-import { element } from 'protractor';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ContentChild, ContentChildren, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -7,13 +6,20 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnInit {
-
+  @ContentChild('heading3',{static:true}) heading;
+  @ContentChildren('heading3') headings;
   constructor() { }
 
   ngOnInit(): void {
+    
   }
-
-  ngAfterVewInit(){
+  ngAfterContentInit() {
+    console.log(this.heading.nativeElement.innerHTML);
+    this.heading.nativeElement.innerHTML="ContentChild🍎";
+    this.heading.nativeElement.style.background="white";
+    this.heading.nativeElement.style.borderRadius="1em";
+    // this.headings.first.nativeElement.innerHTML="ContentChildren 🍎";
+    // this.headings.last.nativeElement.innerHTML="ContentChildren 🍎";
   }
 
 }

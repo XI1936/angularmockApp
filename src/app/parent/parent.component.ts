@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements OnInit {
-
+  apples:any=[];
   constructor() { }
 
   ngOnInit(): void {
+    this.apples=["🍎","🍎","🍎"];
   }
 
 }

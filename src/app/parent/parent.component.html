@@ -1,7 +1,10 @@
 <div>
 <h1> Parent Component have 🍎  </h1> 
     <app-child>
-        <h3 slot1>This 🍎 from Parent</h3>
-        <h3 slot2>More 🍎🍎🍎🍎🍎</h3>
+        <h3 #heading3>This 🍎 from Parent</h3>
+        <h3 #heading3>More 🍎🍎</h3>
+        <h4 *ngFor="let a of apples">
+            {{a}}
+        </h4>
     </app-child>
 </div>
