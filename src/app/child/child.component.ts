@@ -7,7 +7,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnInit {
-@ViewChild('pstring',{static:false})  parentString; 
 
   constructor() { }
 
@@ -15,7 +14,6 @@ export class ChildComponent implements OnInit {
   }
 
   ngAfterVewInit(){
-    console.log(this.parentString);
   }
 
 }
